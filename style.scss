@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Libre+Baskerville&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500&display=swap');
+
+@import "./variables.scss";
+
+@mixin a-style($font-color) {
+    color: $font-color;
+}
+
+@mixin background-styles($background) {
+    background-size: cover;
+    background-image: url($background);
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+html {
+    font-size: 62.5%;
+}
+a {
+    @include a-style(#000);
+    text-decoration: none;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 110px;
+
+    & #logo {
+        margin-left: 4rem;
+        height: 90px;
+        width: 90px;
+    }
+    & nav  {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 400px;
+    }
+    & ul {
+        display: flex;
+    }
+}
+
+ul  {
+    & a:hover { 
+        transition: 200ms ease-in-out;
+        color: #30478C;
+        border-bottom: 1px solid #BDB0D9;
+    }
+
+    & li {
+        margin-left: 20px;
+        font-size: 1.8rem;
+    }
+}
+
+.section {
+    width: 100vw;
+    height: 700px;
+}
+
+#home {
+    @include background-styles("images/background.jpg");
+    background-position: center center;
+    font-family: $--font-pattern;
+    align-items: center;
+    justify-content: space-around;
+
+    & h1 {
+        text-align: center;
+        font-size: 3rem;
+        color: #F2C84B;
+        text-shadow: 2px 2px #D9A036;
+        margin-top: 3rem;
+    }
+    & article {
+        text-align: center;
+        font-size: 1.9rem;
+        font-weight: 560;
+        font-family: $--font-text-style;
+        color: #F2DFF2;
+    }
+}
+
+span {
+    color: #F2D785;
+}
+
+.section-about {
+    width: 100vw;
+    height: 800px;
+}
+#middleImg{
+    width: 500px;
+    height: 300px;
+}
+
+.article-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 80px;
+    font-family: $--font-text;
+    font-size: 1.5rem;
+    & h2 {
+        text-align: center;
+        font-family: $--font-text-style;
+        font-size: 2.5rem;
+        color: #30478C;
+    }
+}
+
+.article-text {
+    width: 400px;
+    text-indent: 2rem;
+    & p {
+        margin-top: 20px;
+        line-height: 2rem;
+    }
+}
+
+#watch {
+    @include background-styles("images/Mordor.jpg");
+
+    font-family: $--font-pattern;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: #FFF;
+    & span {
+        color: #F26241;
+    }
+    & button {
+        width: 300px;
+        height: 50px;
+        border-radius: 10px;
+        border: 2px solid white;
+        text-transform: uppercase;
+        font-family: $--font-pattern;
+        background-color: #F26241;
+        cursor: pointer;
+        color: #FFF;
+        &:hover {
+            transition: 300ms ease-in-out all;
+            border: #F26241 solid 2px;
+            background-color: white;
+            color: #F26241;
+        }
+    }
+
+}
+.watch {
+    margin: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.prime {
+    text-shadow: 2px 2px black;
+}
+.watch-here {
+    margin-top: 100px;
+    font-family: $--font-text-style;
+    font-size: 1.5rem;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    & h2 {
+        text-shadow: #F26241 2px 2px;
+    }
+}
+
+#tolkienImg{
+    width: 500px;
+    height: 300px;
+    border-radius: 5%;
+    border: #D9A036 2px solid;
+    box-shadow: #64430677 1px 1px 1px 1px;
+}
+
+.tolkien-content span {
+    color: #FFF;
+    background-color: #BDB0D9;
+}
+
+#universe {
+    @include background-styles("images/Turgon.jpg");
+    align-items: center;
+    text-align: center;
+    & h2 {
+        font-family: $--font-pattern;
+        font-size: 3.5rem;
+        color: #F2C84B;
+        margin-top: 100px;
+        text-shadow: #D9A036 2px 2px;
+    }
+
+    & p {
+        font-family: $--font-text-style;
+        font-size: 2rem;
+        color: #F2C84B;
+        margin-top: 100px;
+    }
+}
+
+footer {
+    border-top: #F2C84B solid 2px;
+    height: 120px;
+    background-color: #30478C;
+    font-family: $--font-text;
+
+    & h2 {
+        color: white;
+        margin: 20px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+
+.contribuitions {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    color: #F2D785;
+
+    & a {
+        color: #BDB0D9;
+    }
+    & div {
+        margin: 0 10px 0 10px;
+    }    
+}
+
+@media (min-width: 320px) and (max-width: 414px) {
+    #home {
+        background-position: 40%;
+    }
+    header {
+        
+        & #logo {
+            margin-left: 0rem;
+            height: 45px;
+            width: 45px;
+        }
+        & nav {
+            width: 350px;
+        }
+    }
+    .article-content {
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+        & #middleImg {
+            margin-top: 10px;
+            width: 80%;
+            height: auto;
+        }
+        & p {
+            font-size: 80%;
+        }
+        & .article-text {
+            width: 300px;
+        }
+    }
+    #watch {
+        background-position: 90%;
+        text-align: center;
+        font-size: 1.2rem;
+        & .watch-content {
+            margin-top: 100px;
+            width: 100vw;
+        }
+        & .watch {
+            margin: 0;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    #tolkien {
+        & #tolkienImg {
+            margin: 20px 0;
+            width: 300px;
+            height: auto;
+        }
+        & .tolkien-content {
+            margin-top: 20px;
+        }
+    }
+    #universe {
+        background-position: 50%;
+        & p {
+            font-size: 1.5rem;
+        }
+    }
+    footer {
+        text-align: center;
+    }
+    
+}
